@@ -1,0 +1,16 @@
+# Variáveis de ambiente (segredos)
+.env
+*.env.local
+
+# Volumes de dados do Docker (se algum dia forem montados como pasta local)
+volumes/
+data/
+
+# IDEs
+.idea/
+*.iml
+.vscode/
+.DS_Store
+
+# Logs
+*.log
