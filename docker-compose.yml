@@ -56,5 +56,18 @@ services:
       timeout: 5s
       retries: 5
 
+  frontend:
+    build:
+      context: ../investai-frontend
+    ports:
+      - "4200:8080"
+    depends_on:
+      - api
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --spider http://localhost:8080/ || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
 volumes:
   postgres_data:
